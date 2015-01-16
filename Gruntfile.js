@@ -16,9 +16,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          'src/_intro.js',
-          'src/main.js',
-          'src/_outro.js'
+          'src/**/*.js'
         ],
         dest: 'dist/<%= pkg.name.replace(".js", "") %>.js'
       }
@@ -63,6 +61,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('test', [
+    'build',
     'karma'
   ]);
 
