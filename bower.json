@@ -1,6 +1,6 @@
 {
   "name": "ListFetcher",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/ListFetcher.min.js",
   "ignore": [
     "**/.*",
@@ -8,5 +8,7 @@
     "bower_components",
     "test"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "~2.4.1"
+  }
 }

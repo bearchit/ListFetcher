@@ -18,9 +18,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'bower_components/lodash/dist/lodash.min.js',
+      
       'dist/**/*.js',
       'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/spec/**/*.spec.js'
     ],
 
     // list of files / patterns to exclude

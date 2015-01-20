@@ -16,9 +16,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          'src/_intro.js',
-          'src/main.js',
-          'src/_outro.js'
+          'src/**/*.js'
         ],
         dest: 'dist/<%= pkg.name.replace(".js", "") %>.js'
       }
@@ -49,8 +47,11 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['concat', 'jshint', 'qunit']
+      files: [
+        'src/**/*.js',
+        'test/**/*.js'
+      ],
+      tasks: ['test']
     },
 
     karma: {
@@ -62,13 +63,14 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('test', [
-    'karma'
-  ]);
-
   grunt.registerTask('build', [
     'concat',
     'uglify'
+  ]);
+
+  grunt.registerTask('test', [
+    'build',
+    'karma'
   ]);
   
   grunt.registerTask('default', [

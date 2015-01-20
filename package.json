@@ -1,6 +1,6 @@
 {
   "name": "ListFetcher",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/ListFetcher.min.js",
   "description": "",
   "repository": {
@@ -13,11 +13,12 @@
   "readmeFilename": "README.md",
   "dependencies": {},
   "devDependencies": {
+    "debug": "^2.1.1",
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-uglify": "~0.2.4",
-    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-karma": "^0.10.1",
     "grunt-newer": "^1.1.0",
     "jasmine-core": "^2.1.3",
