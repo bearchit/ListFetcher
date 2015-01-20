@@ -13,7 +13,7 @@ describe('ListFetcher', function() {
     expect(listFetcher.perPage).toEqual(5);
   });
 
-  it('can instanciate with options', function() {
+  xit('can instanciate with options', function() {
     var listFetcherWithOption = new ListFetcher(
       {
         pageIndex: 5,
