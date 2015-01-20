@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         'src/**/*.js',
         'test/**/*.js'
       ],
-      tasks: ['concat', 'jshint', 'karma']
+      tasks: ['test']
     },
 
     karma: {
@@ -63,14 +63,14 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('test', [
-    'build',
-    'karma'
-  ]);
-
   grunt.registerTask('build', [
     'concat',
     'uglify'
+  ]);
+
+  grunt.registerTask('test', [
+    'build',
+    'karma'
   ]);
   
   grunt.registerTask('default', [
