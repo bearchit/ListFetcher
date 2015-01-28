@@ -67,5 +67,33 @@ describe('ListFetcher', function() {
     expect(listFetcher.endOfPage).toEqual(false);
     
   });
+
+  it('can support non-array type', function() {
+
+    var nonArrayListFetcher = new ListFetcher();
+
+    nonArrayListFetcher.fetcher = function(pageIndex) {
+      switch(pageIndex) {
+        case 1:
+        return { teams: ['A', 'B'] };
+
+        case 2:
+        return { teams: ['C', 'D'] };
+      }
+
+      return [];
+    };
+
+    nonArrayListFetcher.concatenator = function(newData) {
+      if(!this.data.hasOwnProperty('teams')) {
+        this.data.teams = [];
+      }
+       
+      this.data.teams = this.data.teams.concat(newData.teams);
+    };
+
+    nonArrayListFetcher.addMore();
+    expect(nonArrayListFetcher.data.teams).toEqual(['A', 'B']);
+  });
   
 });

@@ -46,10 +46,17 @@ ListFetcher는 기본적으로 Array 타입의 데이터를 지원합니다. Arr
 
 ```javascript
 // Object 데이터 타입을 지원하는 예제
-listFetcher.concatenator = function(newData) {
-  this.data.collection1 = this.data.collection1.concat(newData.collection1);
-  return this.data;
+var nonArrayListFetcher = new ListFetcher();
+
+nonArrayListFetcher.concatenator = function(newData) {
+  if(!this.data.hasOwnProperty('teams')) {
+    this.data.teams = [];
+  }
+
+  this.data.teams = this.data.teams.concat(newData.teams);
 };
+
+nonArrayListFetcher.addMore();
 ```
 
 ### 데이터 가져오기
