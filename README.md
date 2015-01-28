@@ -52,6 +52,15 @@ listFetcher.concatenator = function(newData) {
 };
 ```
 
+### 데이터 가져오기
+addMore() 메서드로 페이징의 다음 데이터를 가져올 수 있습니다.
+
+```javascript
+listFetcher.addMore();
+console.log(listFetcher.data);
+```
+
+
 ## Contributing
 
 We'll check out your contribution if you:
