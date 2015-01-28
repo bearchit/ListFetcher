@@ -10,10 +10,14 @@ describe('ListFetcher', function() {
 
   it('can instanciate', function() {
     expect(listFetcher).not.toEqual(undefined);
-    expect(listFetcher.perPage).toEqual(5);
   });
 
-  xit('can instanciate with options', function() {
+  it('can instanciate with default options', function() {
+    expect(listFetcher.pageIndex).toEqual(1);
+    expect(listFetcher.perPage).toEqual(10);
+  });
+
+  it('can instanciate with options', function() {
     var listFetcherWithOption = new ListFetcher(
       {
         pageIndex: 5,

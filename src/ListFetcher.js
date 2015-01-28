@@ -4,14 +4,18 @@
 
 var ListFetcher = (function(_) {
 
-  function ListFetcher(args) {
-    // TODO: args 구현(_.extend 사용해봅시다)
+  function ListFetcher(opts) {
+    opts = _.merge({
+      pageIndex: 1,
+      perPage: 10      
+    }, opts);
     
-    this.pageIndex = 1;
-    this.perPage = 5;
+    this.pageIndex = opts.pageIndex;
+    this.perPage = opts.perPage;
+
     this.data = [];
     this.endOfPage = false;
-  };
+  }
 
   var fetcher = function() {
     return this.data;
