@@ -2,7 +2,7 @@
 
 'use strict';
 
-var ListFetcher = (function(_) {
+var ListFetcher = (function() {
 
   function ListFetcher(opts) {
     opts = _.merge({
@@ -27,7 +27,7 @@ var ListFetcher = (function(_) {
   };
 
   var addMore = function() {
-    var data = this.fetcher(this.pageIndex);
+    var data = this.fetcher(this.pageIndex, this.perPage);
 
     this.endOfPage = data.length === 0;
     if(this.endOfPage === false) {
@@ -56,4 +56,4 @@ var ListFetcher = (function(_) {
 
   return ListFetcher;
 
-})(_ || {});
+})();
